@@ -92,3 +92,7 @@ footer {
 .points{
     padding:7px;
 }
+
+.photo{
+    border-radius: 20px;
+}
