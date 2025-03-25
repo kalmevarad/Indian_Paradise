@@ -4,126 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mumbai - Indian Paradise</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #ff9800;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            font-size: 1.8rem;
-        }
-        main {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h2 {
-            color: #ff9800;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-        .interactive {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            text-align: center;
-        }
-        .map, .video {
-            flex: 1;
-            min-width: 300px;
-        }
-        iframe {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .booking {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .booking a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #ff9800;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/suntemple.css">
 </head>
 <body>
     <header>
-        <h1>Mumbai - The City of Dreams</h1>
+        <h1>Sun Temple</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./mumbai.html">Mumbai</a></li>
+                <li><a href="./manali.html">Manali</a></li>
+                <li><a href="./amber-palace.html">Amber Palace</a></li>
+                <li><a href="./jaisalmer.html">Jaisalmer</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section class="overview">
-            <p>Mumbai, the "City of Dreams," is India's financial capital and a vibrant metropolis known for its bustling streets, colonial architecture, and Bollywood glamour.</p>
-        </section>
+    
+    <section class="destination">
+        <h2>Mumbai</h2>
+        <div class="history-block">
+            <img  src="../img/gateway-of-india-mumbai.jpg">
+            <h2 class="headings">The Great History of Gateway of India:-</h2>
+                <ul class="discription">
+                    <li class="points">Built in 1924 to commemorate the visit of King George V and Queen Mary to India in 1911.</li>
+                    <li class="points">Designed in Indo-Saracenic style, blending Islamic, Hindu, and European architectural elements.</li>
+                    <li class="points">Became a symbol of British rule and later Indian independence, as the last British troops left through this gateway in 1948.</li>
+                </ul> 
+        </div>
+
+        <div class="history-block">
+            <img src="../img/elephant.jpg">
+            <h2 class="headings">The Great History of Elephant caves:-</h2>
+                <ul class="discription">
+                    <li class="points">Date back to the 5th-7th century, built by Hindu rulers of the Kalachuri dynasty.</li>
+                    <li class="points">Dedicated to Lord Shiva, with the famous Trimurti sculpture (three-faced Shiva).</li>
+                    <li class="points">Named "Elephanta" by the Portuguese in the 16th century after they found a large stone elephant statue on the island.</li>
+                    <li class="points">Declared a UNESCO World Heritage Site in 1987.</li>
+                </ul> 
+        </div>
+
+        <div class="history-block">
+            <img src="../img/sidhivinayak.jpg">
+            <h2 class="headings">The Great History of Sidhivinayak Temple:-</h2>
+                <ul class="discription">
+                    <li class="points">Built in 1801 by a rich Agri woman named Deubai Patil, who wished to help childless women conceive.</li>
+                    <li class="points">Dedicated to Lord Ganesha, now one of the richest temples in India.</li>
+                    <li class="points">Visited by Bollywood celebrities and politicians regularly.</li>
+                </ul> 
+        </div>
+
+       
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218885.78956702186!2d72.72581058542342!3d19.08561813855988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1742895668547!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         
-        <section class="attractions">
-            <h2>Top Attractions</h2>
-            <ul>
-                <li><strong>Gateway of India</strong> – Iconic waterfront monument.</li>
-                <li><strong>Marine Drive</strong> – Scenic coastal road perfect for evening strolls.</li>
-                <li><strong>Elephanta Caves</strong> – Ancient rock-cut temples on Elephanta Island.</li>
-                <li><strong>Chhatrapati Shivaji Terminus</strong> – A UNESCO-listed railway station.</li>
-                <li><strong>Colaba Causeway</strong> – A shopper’s paradise for souvenirs and fashion.</li>
-            </ul>
-        </section>
+
         
-        <section class="travel-tips">
-            <h2>Travel Tips</h2>
-            <ul>
-                <li><strong>Best time to visit:</strong> November to February.</li>
-                <li><strong>Local transport:</strong> Mumbai local trains, taxis, and auto-rickshaws.</li>
-                <li><strong>Must-try street food:</strong> Vada pav, pav bhaji, and bhel puri.</li>
-            </ul>
-        </section>
-        
-        <section class="interactive">
-            <h2>Explore Mumbai</h2>
-            <div class="map">
-                <h3>Location</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30238.286549262195!2d72.8194206!3d18.9387711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1d1b0b2c6b7%3A0x514cc0d5e6c4d5a5!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sin!4v1648334879821!5m2!1sen!2sin" height="300" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="video">
-                <h3>Video Tour</h3>
-                <iframe height="300" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-        
-        <section class="booking">
-            <h2>Book Your Mumbai Experience</h2>
-            <a href="#">Book Now</a>
-        </section>
-    </main>
+    </section>
+    
     <footer>
-        <p>&copy; 2025 Indian Paradise. All rights reserved.</p>
+        <p>&copy; 2025 Indian Paradise. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
