@@ -1,86 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
-    <link rel="stylesheet" href="../css/signin.css"/>
-    </head><body>
-        <div class="navbar">
-            <div>
-                <img src="./../img/goa-images/logo.png" class="navbar-icon">
-            
-            </div>
-            <div class="tit">
-                <h1 class="title">Indian Paradise</h1> 
-            </div>
-            <div class="navbar-menu">
-                
-                <span>
-                    <a href="../index.html">
-                       <h6 class="menu-icon">Home</h6>    
-                    </a>
-                </span> 
-                
-                <span>
-       
-                    <a href="./about.html">
-                        <h6 class="menu-icon">About</h6>
-                    </a>
-                </span>
-       
-                <span>
-                    <a href="./contact.html">
-                        <h6 class="menu-icon">Support</h6>
-                    </a>
-                </span>
-                
-                <span>
-                    <a href="./signin.html" >
-                        <h6 class="menu-icon">Login</h6>
-                    </a>
-                </span>
-            </div>
-        
-    
-        </div>
-        
-         
-        <section class="section">
-            <form>
-                <h1 class="h1"> Travel Login Form</h1>
-                <div class="inputbox">
-                    <ion-icon name="mail-outline"  calss="inputbox-ion-icon"></ion-icon>
-                    <input type="text" required class="inputbox-input">                 
-                    <label for=""  class="inputbox-label">Full name</label>
-                    
-                </div>
-                <div class="inputbox">
-                    <ion-icon name="mail-outline"  calss="inputbox-ion-icon"></ion-icon>
-                   
-                    <input type="email" required class="inputbox-input">
-                    <label for=""  class="inputbox-label">Email</label>
-                </div>
-                
-                <div class="inputbox">
-                    <ion-icon name="lock-closed-outline" calss="inputbox-ion-icon"></ion-icon>
-                    <input type="password" required class="inputbox-input">
-                    <label for="" class="inputbox-label"> Password</label>
-                </div>
-                <div class="forget">
-                    <label for="" class="forget-label"><input type="checkbox" class="forget-label-input">Remember Me</label>
-                  <a href="#" class="forget-a">Forgot Password</a>
-                </div>
-                <button>Log in</button>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Sign Up / Sign In</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-                <div class="register">
-                    <p>Don't have a account? <a href="signup.html" class="register-p-a"> Sign Up </a></p>
-                   
-                </div>  
-            </form>
-        </section>
+    body {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid goldenrod;
+      border-radius: 30px;
+      backdrop-filter: blur(20px);
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 0 20px rgba(218, 165, 32, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: goldenrod;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      background: transparent;
+      border: none;
+      color: goldenrod;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tabs button.active {
+      border-bottom: 2px solid goldenrod;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: white;
+      padding: 10px;
+      margin-bottom: 20px;
+      outline: none;
+    }
+
+    button[type="submit"] {
+      background: goldenrod;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button[type="submit"]:hover {
+      background: white;
+      color: goldenrod;
+      border: 1px solid goldenrod;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Indian Paradise</h1>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab('signup')">Sign Up</button>
+      <button class="tab-btn" onclick="switchTab('signin')">Sign In</button>
+    </div>
+
+    <!-- Sign Up Form -->
+    <form id="signup" class="active" onsubmit="handleSignup(event)">
+      <input type="text" id="signup-username" placeholder="Username" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Sign In Form -->
+    <form id="signin" onsubmit="handleSignin(event)">
+      <input type="text" id="signin-username" placeholder="Username" required />
+      <input type="password" id="signin-password" placeholder="Password" required />
+      <a href="../index.html"></a><button type="submit">Login</button>
+    </form>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    // Switch between sign up and sign in
+    function switchTab(tab) {
+      document.querySelectorAll('form').forEach(f => f.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('message').textContent = '';
+    }
+
+    // Show messages
+    function showMessage(msg, color = "red") {
+      const message = document.getElementById("message");
+      message.textContent = msg;
+      message.style.color = color;
+    }
+
+    // Get all users from localStorage
+    function getUsers() {
+      return JSON.parse(localStorage.getItem("users")) || [];
+    }
+
+    // Save users array back to localStorage
+    function saveUsers(users) {
+      localStorage.setItem("users", JSON.stringify(users));
+    }
+
+    // Handle Sign Up
+    function handleSignup(e) {
+      e.preventDefault();
+      const username = document.getElementById("signup-username").value.trim();
+      const password = document.getElementById("signup-password").value.trim();
+
+      if (!username || !password) {
+        showMessage("Please fill out all fields.");
+        return;
+      }
+
+      const users = getUsers();
+      const userExists = users.some(user => user.username === username);
+
+      if (userExists) {
+        showMessage("Username already exists.");
+        return;
+      }
+
+      users.push({ username, password });
+      saveUsers(users);
+      showMessage("Registration successful. Please sign in.", "green");
+      switchTab('signin');
+    }
+
     
-            
+    // Handle Sign In
+function handleSignin(e) {
+  e.preventDefault();
+  const username = document.getElementById("signin-username").value.trim();
+  const password = document.getElementById("signin-password").value.trim();
+
+  const users = getUsers();
+  const matchedUser = users.find(user => user.username === username && user.password === password);
+
+  if (matchedUser) {
     
+    localStorage.setItem("loggedInUser", JSON.stringify(matchedUser));
+    
+    
+    showMessage(`Login successful. Redirecting...`, "green");
+
+    setTimeout(() => {
+      window.location.href = "../index.html";
+    }, 1000);
+  } else {
+    showMessage("Invalid username or password.");
+  }
+}
+
+  </script>
 </body>
 </html>
